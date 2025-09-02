@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* From Uiverse.io by doniaskima */ 
+.btn-53,
+.btn-53 *,
+.btn-53 :after,
+.btn-53 :before,
+.btn-53:after,
+.btn-53:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-53 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-53:disabled {
+  cursor: default;
+}
+
+.btn-53:-moz-focusring {
+  outline: auto;
+}
+
+.btn-53 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-53 [hidden] {
+  display: none;
+}
+
+.btn-53 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-53 .original {
+  background: #fff;
+  color: #000;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-53:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-53 .letters {
+  display: inline-flex;
+}
+
+.btn-53 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+
+.btn-53 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-53:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-53:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-53:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-53:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-53:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-53:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1 class="text-center font-3xl font-bold fw-200 text-3xl my-5">Car World</h1>
+    <div class="flex justify-between mx-10">
+        <!-- add -->
+        <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-red-300 dark:border-gray-700">
+            <form class="space-y-6 m-5" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Enter Details</h5>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Car
+                        Brand</label>
+                    <input type="text" name="email" id="brand"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="car brand" required />
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Car
+                        Price</label>
+                    <input type="text" name="password" id="price" placeholder="car price"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        required />
+                </div>
+                <div>
+                    <label for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Key</label>
+                    <input type="text" name="password" id="key" placeholder="key"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        required />
+                </div>
+
+              <!-- From Uiverse.io by doniaskima --> 
+<button  onclick="addCars()" class="btn-53">
+  <div class="original">ADD</div>
+  <div class="letters">
+    
+    <span>A</span>
+    <span>D</span>
+    <span>D</span>
+    
+  </div>
+</button>
+
+
+            </form>
+
+        </div>
+        <!-- retrieve -->
+        <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-red-300  dark:border-gray-700">
+            <form class="space-y-6 m-5" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Enter Key to Retrieve Item</h5>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Key</label>
+                    <input type="text" name="email" id="searchkey"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="key" required />
+                </div>
+
+
+
+
+<button  onclick="retrieve()" class="btn-53">
+  <div class="original">SEARCH</div>
+  <div class="letters">
+    
+    <span>S</span>
+    <span>E</span>
+    <span>A</span>
+        <span>R</span>
+            <span>C</span>
+                <span>H</span>
+
+
+
+    
+  </div>
+</button>
+
+            </form>
+            <div id="result"></div>
+        </div>
+        <!-- remove -->
+        <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-red-300  dark:border-gray-700">
+            <form class="space-y-6 m-5" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Enter key to delete</h5>
+
+                <div>
+                    <label for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Key</label>
+                    <input type="text" name="password" id="deletekey" placeholder="key"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        required />
+                </div>
+
+
+
+                <button  onclick="deleteItem()" class="btn-53">
+  <div class="original">SEARCH</div>
+  <div class="letters">
+    
+    <span>D</span>
+    <span>E</span>
+    <span>L</span>
+        <span>E</span>
+            <span>T</span>
+                <span>E</span>
+
+
+
+    
+  </div>
+</button>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function addCars() {
+            const carDetails = {
+                car_name: brand.value,
+                car_price: price.value,
+                car_key: key.value
+            }
+            console.log(carDetails)
+            if (carDetails.car_name == '' || carDetails.car_price == '' || carDetails.car_price == '') {
+                alert("Please fill all ")
+            }
+            else {
+                if (carDetails.car_key in localStorage) {
+                    alert(" Car Already added")
+                }
+                else {
+                    localStorage.setItem(carDetails.car_key, JSON.stringify(carDetails))
+                    alert("employee added succesfully")
+                }
+
+            }
+
+        }
+        function retrieve() {
+            let searchKey = searchkey.value
+            console.log(searchKey)
+            if (searchKey in localStorage) {
+                let car = JSON.parse(localStorage.getItem(searchKey))
+                console.log(car)
+                result.innerHTML = `
+
+
+<h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"> Employee Details:</h2>
+<ul class="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
+    <li>
+        Key:${car.car_key}
+    </li>
+    <li>
+         brand:${car.car_name}
+    </li>
+    <li>
+        Price:${car.car_price}
+    </li>
+    
+    
+</ul>
+
+
+`
+
+            }
+            else {
+                alert("key not found")
+            }
+        }
+
+        function deleteItem() {
+            let deleteKey = deletekey.value
+            console.log(deleteKey)
+            if (deleteKey in localStorage) {
+                localStorage.removeItem(deleteKey)
+                alert("Deleted")
+            }
+            else {
+                alert("key doesnt exist")
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
